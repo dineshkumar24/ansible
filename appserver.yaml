@@ -1,7 +1,14 @@
 ---
-- hosts: appserver
-  become: yes
-  task:
-    - apt:
+  - hosts: appserver
+    become: true
+    become_method: sudo
+    become_user: root
+
+    tasks:
+    - name: update packages
+      apt:
+        update_cache: yes
+    - name: install tomcat7
+      apt:
         name: tomcat7
         state: present

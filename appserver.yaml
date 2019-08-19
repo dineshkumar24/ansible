@@ -8,7 +8,7 @@
     - name: update packages
       apt:
         update_cache: yes
-    - name: install tomcat7
+    - name: install tomcat
       apt:
-        name: tomcat7
+        name: tomcat8
         state: present
